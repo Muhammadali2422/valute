@@ -1,0 +1,205 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+:root {
+    --bg: #080d19;
+    --card: #111a2b;
+    --primary: #38f9a5;
+    --secondary: #00c6ff;
+    --text: #f1f5f9;
+    --muted: #94a3b8;
+    --border: rgba(148, 163, 184, 0.18);
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 16px;
+    font-family: 'Inter', sans-serif;
+    color: var(--text);
+    background:
+        radial-gradient(ellipse at 15% 10%, #123b45 0%, transparent 40%),
+        radial-gradient(ellipse at 85% 90%, #252054 0%, transparent 40%),
+        var(--bg);
+}
+
+/* Main container */
+#container {
+    width: 100%;
+    max-width: 520px;
+    padding: 36px;
+    margin: auto;
+    background: rgba(17, 26, 43, 0.88);
+    border: 1px solid var(--border);
+    border-radius: 28px;
+    box-shadow:
+        0 25px 80px rgba(0, 0, 0, 0.4),
+        inset 0 1px 0 rgba(255, 255, 255, 0.04);
+    backdrop-filter: blur(20px);
+    animation: appear 0.7s ease;
+}
+
+/* Headings */
+h1 {
+    margin-bottom: 12px;
+    font-size: clamp(26px, 5vw, 36px);
+    font-weight: 800;
+    letter-spacing: -1.5px;
+    text-align: center;
+    background: linear-gradient(120deg, #ffffff, var(--primary));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+h3 {
+    margin: 28px 0 12px;
+    color: #dbeafe;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+/* Paragraph / result */
+p {
+    display: block;
+    margin-top: 24px;
+    padding: 22px 16px;
+    color: #06251b;
+    background: linear-gradient(135deg, #38f9a5, #a3ffcf);
+    border: none;
+    border-radius: 16px;
+    font-size: 17px;
+    line-height: 1.7;
+    font-weight: 800;
+    text-align: center;
+    overflow-wrap: anywhere;
+    box-shadow: 0 8px 30px rgba(56, 249, 165, 0.12);
+}
+
+/* Select fields */
+select {
+    width: 100%;
+    display: block;
+    padding: 15px 16px;
+    color: var(--text);
+    background-color: #0b1220;
+    border: 1px solid #344258;
+    border-radius: 13px;
+    outline: none;
+    font-family: inherit;
+    font-size: 15px;
+    cursor: pointer;
+    transition: border-color 0.25s, box-shadow 0.25s;
+}
+
+select:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 4px rgba(56, 249, 165, 0.1);
+}
+
+select option {
+    color: white;
+    background: #111a2b;
+}
+
+/* Input fields */
+input {
+    width: 100%;
+    display: block;
+    margin: 0;
+    padding: 15px 16px;
+    color: var(--text);
+    background: #0b1220;
+    border: 1px solid #344258;
+    border-radius: 13px;
+    outline: none;
+    font-family: inherit;
+    font-size: 16px;
+    transition: 0.25s ease;
+}
+
+input::placeholder {
+    color: #64748b;
+}
+
+input:focus {
+    border-color: var(--secondary);
+    box-shadow: 0 0 0 4px rgba(0, 198, 255, 0.1);
+}
+
+/* Buttons */
+button {
+    width: 100%;
+    margin-top: 24px;
+    padding: 16px 20px;
+    color: #06251b;
+    background: linear-gradient(120deg, var(--primary), #8affc8);
+    border: none;
+    border-radius: 14px;
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: 800;
+    cursor: pointer;
+    box-shadow: 0 8px 25px rgba(56, 249, 165, 0.16);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 35px rgba(56, 249, 165, 0.3);
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+/* Icons */
+i, .bi {
+    color: var(--primary);
+}
+
+/* Entrance animation */
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Mobile responsive */
+@media (max-width: 480px) {
+    body {
+        padding: 18px 12px;
+    }
+
+    #container {
+        padding: 24px 18px;
+        border-radius: 22px;
+    }
+
+    h1 {
+        font-size: 27px;
+    }
+
+    h3 {
+        margin-top: 22px;
+    }
+
+    p {
+        padding: 18px 12px;
+        font-size: 15px;
+    }
+}
